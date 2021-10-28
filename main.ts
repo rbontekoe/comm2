@@ -20,7 +20,6 @@ radio.onReceivedString(function (receivedString) {
     toonGegevens(data)
 })
 input.onButtonPressed(Button.B, function () {
-    data = "20|1030|40"
     toonGegevens(data)
 })
 let data = ""
