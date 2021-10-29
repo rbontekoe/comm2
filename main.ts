@@ -1,11 +1,3 @@
-function toonGegevens (receivedData: string) {
-    array = receivedData.split("|")
-    i = 0
-    for (let index = 0; index < array.length; index++) {
-        basic.showString("" + (array[i]))
-        i += 1
-    }
-}
 input.onButtonPressed(Button.A, function () {
     data = "20|1030|40"
     array = data.split("|")
@@ -17,14 +9,22 @@ input.onButtonPressed(Button.A, function () {
 })
 radio.onReceivedString(function (receivedString) {
     data = receivedString
-    toonGegevens(data)
+    ToonGegevens(data)
 })
 input.onButtonPressed(Button.B, function () {
-    toonGegevens(data)
+    ToonGegevens(data)
 })
-let data = ""
+function ToonGegevens (gegegens: string) {
+    array = gegegens.split("|")
+    i = 0
+    for (let index = 0; index < array.length; index++) {
+        basic.showString("" + (array[i]))
+        i += 1
+    }
+}
 let i = 0
 let array: string[] = []
+let data = ""
 radio.setGroup(10)
 basic.showLeds(`
     . . # . .
