@@ -7,21 +7,21 @@ input.onButtonPressed(Button.A, function () {
         i += 1
     }
 })
-radio.onReceivedString(function (receivedString) {
-    data = receivedString
-    ToonGegevens(data)
-})
-input.onButtonPressed(Button.B, function () {
-    ToonGegevens(data)
-})
-function ToonGegevens (gegegens: string) {
-    array = gegegens.split("|")
+function toon_gegevens (gegevens: string) {
+    array = gegevens.split("|")
     i = 0
     for (let index = 0; index < array.length; index++) {
         basic.showString("" + (array[i]))
         i += 1
     }
 }
+radio.onReceivedString(function (receivedString) {
+    data = receivedString
+    toon_gegevens(data)
+})
+input.onButtonPressed(Button.B, function () {
+    toon_gegevens(data)
+})
 let i = 0
 let array: string[] = []
 let data = ""
